@@ -1,0 +1,11 @@
+<div class="tabs-wrapper">
+  <div class="innerImg"
+       *ngFor = 'let item of tabsPositions; let i=index'
+       (click)="checkCurrent(i)">
+    <div class="imgWrapper animated"
+         [ngClass]="{'flipInY': showTwo.indexOf(item) == -1, 'tada':showTwo.indexOf(item) > -1}"
+         *ngIf="(currentTab == i)||(showTwo.indexOf(item) > -1 )">
+      <img src="../../assets/img/icon-{{item}}.png" alt="">
+    </div>
+  </div>
+</div>

@@ -1,0 +1,13 @@
+<h1>My favorite Hero is - <i>{{myHero}}</i></h1>
+<ul>
+    <li *ngFor = 'let hero of newHeroList' [ngSwitch]="hero.id">
+        <i *ngSwitchCase = '0'>{{hero.name}}</i>
+        <span *ngSwitchDefault>{{hero.name}}</span>
+    </li>
+</ul>
+
+<input type="text" #box (keyup.enter)="addNewHero(box.value); box.className=box.value">
+<button (click) = "addNewHero(box.value); box.value=''">Add New Hero</button>
+<p><img *ngIf="heroCounter>0" src="../assets/img/hero.png" width="100px" alt="">{{valueFromInput}} <strong *ngIf="heroCounter>0"> - {{heroCounter}}</strong></p>
+
+<app-open-tabs></app-open-tabs>

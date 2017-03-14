@@ -1,0 +1,20 @@
+.tabs-wrapper{
+    width: 500px;
+    margin: 0 auto;
+}
+.innerImg{
+    width: 100px;
+    height: 100px;
+    border: 1px solid green;
+    display: inline-block;
+    vertical-align: top;
+    margin-bottom: 10px;
+    margin-right: 10px;
+}
+img{
+    height: 100%;
+}
+
+.imgWrapper{
+    height: 100%;
+}
