@@ -5,11 +5,13 @@ import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
 import { OpenTabsComponent } from './open-tabs/open-tabs.component';
+import { HeroFormComponent } from './hero-form/hero-form.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    OpenTabsComponent
+    OpenTabsComponent,
+    HeroFormComponent
   ],
   imports: [
     BrowserModule,

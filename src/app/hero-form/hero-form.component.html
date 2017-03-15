@@ -1,0 +1,66 @@
+<div class="">
+    <div class="form-group" [hidden]="submitted">
+        <h1>Hero Form</h1>
+        <form action="" (ngSubmit)="onSubmit()" #heroForm="ngForm">
+            {{diagnostic}}
+
+            <div class="form-group">
+                <label for="name">Hero Name</label>
+                <input type="text" name="name"
+                       class="form-control" id="name"
+                       required
+                       [(ngModel)]="model.name" #name="ngModel">
+                <div class="alert alert-danger" [hidden]="name.valid || name.pristine">Field Name is required</div>
+            </div>
+
+            <div class="form-group">
+                <label for="alterEgo">Alter Ego</label>
+                <input type="text" name="alterEgo"
+                       class="form-control" id="alterEgo"
+                       [(ngModel)]="model.alterEgo">
+            </div>
+
+            <div class="form-group">
+                <label for="power">Choice hero power's</label>
+                <select class="form-control" name="power"
+                        id="power"
+                        [(ngModel)]="model.power">
+                    <option *ngFor="let item of powers" [value]="item">{{item}}</option>
+                </select>
+            </div>
+
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-md-6">
+                        <button type="submit" class="btn btn-success" [disabled]="!heroForm.form.valid">Submit</button>
+                    </div>
+                    <div class="col-md-6 text-right">
+                        <button class="btn btn-danger" (click)="newHero()">Reset form</button>
+                    </div>
+                </div>
+
+
+            </div>
+
+
+        </form>
+    </div>
+    <div class="form-group" [hidden]="!submitted">
+        <h2>You submitted the following Hero:</h2>
+        <div class="row">
+            <div class="col-md-3">Name:</div>
+            <div class="col-md-9">{{model.name}}</div>
+        </div>
+        <div class="row">
+            <div class="col-md-3">Alter Ego:</div>
+            <div class="col-md-9" *ngIf="model.alterEgo">{{model.alterEgo}}</div>
+            <div class="col-md-9" *ngIf="!model.alterEgo">hero without alterEgo</div>
+        </div>
+        <div class="row">
+            <div class="col-md-3">Power:</div>
+            <div class="col-md-9">{{model.power}}</div>
+        </div>
+        <br>
+        <button class="btn btn-default" (click)="submitted=false">Edit this Hero</button>
+    </div>
+</div>

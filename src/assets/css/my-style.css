@@ -1,0 +1,6 @@
+.form-control.ng-valid{
+    box-shadow: 0 0 8px rgba(0, 255, 0, .9);
+}
+.form-control.ng-invalid{
+    box-shadow: 0 0 8px rgba(255, 0, 0, .9);
+}

@@ -10,4 +10,13 @@
 <button (click) = "addNewHero(box.value); box.value=''">Add New Hero</button>
 <p><img *ngIf="heroCounter>0" src="../assets/img/hero.png" width="100px" alt="">{{valueFromInput}} <strong *ngIf="heroCounter>0"> - {{heroCounter}}</strong></p>
 
-<app-open-tabs></app-open-tabs>
+<div class="container">
+    <div class="row">
+        <div class="col-md-6">
+            <app-open-tabs></app-open-tabs>
+        </div>
+        <div class="col-md-6">
+            <app-hero-form></app-hero-form>
+        </div>
+    </div>
+</div>
